@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users-list',
@@ -29,24 +30,21 @@ export class UsersListComponent implements OnInit {
   filteredUsers: IUser[] = [];
   error!: boolean;
 
-  constructor(private usersService: UsersService) {}
+  constructor(private usersService: UsersService, private router: Router) {}
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngOnInit() {
     this.getData();
   }
   getData() {
-    this.usersService.getUsers().subscribe({
-      next: (data) => {
-        this.users = new MatTableDataSource<IUser>(data.data);
-        this.users.paginator = this.paginator;
-      },
-      error: () => (this.error = true),
+    this.usersService.getUsers().subscribe((data) => {
+      this.users = new MatTableDataSource<IUser>(data.data);
+      this.users.paginator = this.paginator;
     });
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value.trim();
-    
+
     if (!filterValue) {
       this.users.filter = '';
       return;
@@ -56,5 +54,8 @@ export class UsersListComponent implements OnInit {
     };
 
     this.users.filter = filterValue;
+  }
+  navigateToUserCard(user: IUser) {
+    this.router.navigate(['/user-card', user.id], { state: { user } });
   }
 }

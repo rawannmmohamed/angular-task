@@ -8,19 +8,9 @@ import { IPage } from '../models/pages';
   providedIn: 'root',
 })
 export class UsersService {
-  private cachedUsersData: IPage | null = null;
-
   constructor(private httpClient: HttpClient) {}
 
   getUsers(): Observable<IPage> {
-    if (this.cachedUsersData) {
-      return of(this.cachedUsersData);
-    } else {
-      return this.httpClient.get<IPage>(apiURL).pipe(
-        tap((data) => {
-          this.cachedUsersData = data;
-        })
-      );
-    }
+    return this.httpClient.get<IPage>(apiURL);
   }
 }

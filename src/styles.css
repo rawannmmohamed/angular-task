@@ -1,7 +1,6 @@
 :root {
   --primary: #ffff;
   --secondary: rgb(62, 60, 60);
-  --text: rgb(62, 8, 62);
 }
 body {
   padding: 0px;
