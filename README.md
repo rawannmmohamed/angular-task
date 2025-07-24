@@ -1,42 +1,38 @@
-# Angular Task
+# Angular Task - Reusable DataTable with CRUD 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
+This project is a reusable, dynamic DataTable component built with **Angular 20**, **PrimeNG**, and **Formly**, supporting full **CRUD operations**, **in-place editing**, **dialog form creation**, and **loading states**. The data is managed using a mock REST API powered by **JSON Server**.
 
-& UI Library : Angular Material
+---
 
-## Live Demo
-https://angular-task-users-info.vercel.app/
+## 📁 Project Structure
 
-## Running the Project Locally
+- `AppComponent` handles:
+  - Product list
+  - Data operations (fetch, create, update, delete)
+  - Success/error toasts
 
-To run this project locally, follow these steps:
+- `DataTableComponent` (reusable)
+  - Accepts dynamic columns and data
+  - Supports inline editing
+  - Allows custom templates
+  - Uses Formly forms in dialogs
 
-### Prerequisites
+---
 
-Before you begin, ensure you have the following installed on your local machine:
+## ⚙️ Technologies Used
 
-- Node.js: Download and install Node.js from [nodejs.org](https://nodejs.org/)
-- Angular CLI: Install Angular CLI globally by running `npm install -g @angular/cli` in your terminal
+- Angular 20
+- PrimeNG 20
+- JSON Server
+- Formly + Formly PrimeNG
+- Tailwind CSS (optional styling)
 
-### Clone the Repository
+---
 
-1. Clone the GitHub repository to your local machine:
-git clone <repository_URL>
-Replace `<repository_URL>` with the URL of your GitHub repository.
+## 🚀 Getting Started
 
-2. Navigate to the project directory:
-cd <project_directory>
-Replace `<project_directory>` with the name of your project directory.
+### 1. Clone the Repository
 
-### Install Dependencies
-
-1. Install project dependencies using npm:
-npm install
-
-
-### Run the Project
-
-1. Start the Angular development server:
-ng serve
-
-2. Open a web browser and navigate to `http://localhost:4200/` to view the project.
+```bash
+git clone https://github.com/rawannmmohamed/angular-task.git
+cd angular-task
