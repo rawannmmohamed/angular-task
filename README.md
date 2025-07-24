@@ -36,3 +36,28 @@ This project is a reusable, dynamic DataTable component built with **Angular 20*
 ```bash
 git clone https://github.com/rawannmmohamed/angular-task.git
 cd angular-task
+```
+
+## 2. Install Dependencies
+
+Make sure you’re using **Node.js v20+**, then run the following to install the project dependencies:
+
+```bash
+npm install --legacy-peer-deps
+```
+
+## 3. Setup Mock API with JSON Server
+
+This project uses [JSON Server](https://github.com/typicode/json-server) to simulate a RESTful backend for product data.
+
+
+## 4. Run the Application
+   Step 1: Start the mock API (JSON Server)
+  ```bash
+npm run start:api
+```
+   Step 2: Start the Angular development server
+  In a new terminal, run:
+
+```bash
+ng serve
